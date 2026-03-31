@@ -489,6 +489,14 @@ class GujaratiTTSDataset(Dataset):
         print(f"[Dataset] {split}: {len(self.entries)} samples "
               f"({skipped} skipped)")
 
+        if len(self.entries) == 0 and skipped > 0:
+            raise RuntimeError(
+                f"0 samples loaded for '{split}' split (all {skipped} entries skipped).\n"
+                f"This usually means the preprocessed files (.npy) are missing.\n"
+                f"Did you forget to run preprocessing?\n"
+                f"Run: python -c \"from data.dataset import run_preprocessing; run_preprocessing()\""
+            )
+
     def __len__(self) -> int:
         return len(self.entries)
 
