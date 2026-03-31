@@ -9,7 +9,7 @@ import os
 # ---------------------------------------------------------------------------
 # Paths — update DATASET_PATH to point to your dataset folder
 # ---------------------------------------------------------------------------
-DATASET_PATH    = "/home/user/gujarati_tts_dataset"       # root of your dataset
+DATASET_PATH    = "/root/.cache/kagglehub/datasets/archishtesting/rasa-gujarati/versions/1/rasa_gujarati"       # root of your dataset
 WAV_DIR         = os.path.join(DATASET_PATH, "wavs")      # folder containing .wav files
 METADATA_FILE   = os.path.join(DATASET_PATH, "metadata.csv")  # pipe-separated CSV
 
